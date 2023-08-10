@@ -41,8 +41,7 @@ function App() {
     );
   }
   return (
-    <div>
-      <span>Connected as: {account}</span>
+    <div className="App">
       <button
         onClick={() => {
           navigate("Trend");

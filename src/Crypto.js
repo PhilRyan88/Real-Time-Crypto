@@ -30,7 +30,9 @@ function Crypto() {
   return (
     <div className="coin-app">
       <div className="coin-search">
-        <h1 className="coin-text">Search a Crypto</h1>
+        {
+          //<h1 className="coin-text">Search a Crypto</h1>
+        }
         <form>
           <input
             className="coin-input"

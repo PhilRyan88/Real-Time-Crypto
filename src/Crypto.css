@@ -1,25 +1,25 @@
+/* Alternate Crypto.css */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-/* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1c;
-  color: #fff;
-}*/
+body {
+  margin: 0; /* Remove default body margin */
+}
 
 .coin-app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 64px;
+  justify-content: center; /* Vertically center the content */
+  min-height: 100vh; /* Set a minimum viewport height to cover the whole display */
   color: #fff;
   background-position: center;
   background-image: url("https://static-prod.adweek.com/wp-content/uploads/2022/12/Untitled_Artwork-5.gif");
-  background-size: contain;
+  background-size: cover; /* Cover the whole display */
   background-attachment: fixed;
+  overflow: hidden; /* Prevent scrollbars */
 }
+
+/* Rest of your CSS remains the same */
 
 .coin-search {
   margin-bottom: 64px;
@@ -52,8 +52,37 @@
   );
 
   color: #e2e2e2;
+  transition: background-image 0.3s, transform 0.2s;
+}
+
+.coin-input:hover {
+  background-image: linear-gradient(
+    -225deg,
+    #4801ff 0%,
+    #7918f2 52%,
+    #ac32e4 100%
+  );
+  transform: translateY(-2px);
 }
 
 .coin-input::placeholder {
   color: #e2e2e2;
 }
+
+.coin-container {
+  padding: 20px;
+  background-color: #1eaaeb64;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.coin-container:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Additional styles can be added as needed */
