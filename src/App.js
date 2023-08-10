@@ -1,5 +1,6 @@
 import Crypto from "./Crypto";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 //import Coin from "./Coin";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -26,13 +27,16 @@ function App() {
   }
   if (account === null) {
     return (
-      <div>
-        <h3>Welcome to the RealTimeCrypto</h3>
-        {isWalletInstalled ? (
-          <button onClick={connectWallet}>Connect Wallet</button>
-        ) : (
-          <p>Install any crypto wallet to continue</p>
-        )}
+      <div className="Home">
+        <center>
+          <h3>Welcome to the RealTimeCrypto</h3>
+
+          {isWalletInstalled ? (
+            <button onClick={connectWallet}>Connect Wallet</button>
+          ) : (
+            <p>Install any crypto wallet to continue</p>
+          )}
+        </center>
       </div>
     );
   }
