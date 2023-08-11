@@ -13,9 +13,10 @@ body {
   min-height: 100vh; /* Set a minimum viewport height to cover the whole display */
   color: #fff;
   background-position: center;
-  background-image: url("https://static-prod.adweek.com/wp-content/uploads/2022/12/Untitled_Artwork-5.gif");
+  background-image: url("https://images.hive.blog/0x0/https://steemitimages.com/DQmZLdE84BuE4pNpxDCiv3QdXKNRAr6ZYyfUJjWjVraXzrZ/source.gif");
   background-size: cover; /* Cover the whole display */
   background-attachment: fixed;
+
   overflow: hidden; /* Prevent scrollbars */
 }
 

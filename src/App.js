@@ -1,13 +1,13 @@
 import Crypto from "./Crypto";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-//import Coin from "./Coin";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function App() {
   const [isWalletInstalled, setIsWalletInstalled] = useState(false);
   const [account, setAccount] = useState(null);
+  const [continueClicked, setContinueClicked] = useState(false); // New state
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,17 +32,28 @@ function App() {
     setAccount(null);
   }
 
+  function handleContinueClick() {
+    setContinueClicked(true);
+    navigate("Trend");
+  }
+
   if (account === null) {
     return (
       <div className="Home">
         <center>
-          <h3>Welcome to the RealTimeCrypto</h3>
+          <section className="heading-container">
+            <h2 class="welcome-heading">Welcome to the RealTimeCrypto</h2>
+          </section>
 
-          {isWalletInstalled ? (
-            <button onClick={connectWallet}>Connect Wallet</button>
-          ) : (
-            <p>Install any crypto wallet to continue</p>
-          )}
+          <section className="btnn">
+            {isWalletInstalled ? (
+              <button className="connect-button" onClick={connectWallet}>
+                Connect Wallet
+              </button>
+            ) : (
+              <p>Install any crypto wallet to continue</p>
+            )}
+          </section>
         </center>
       </div>
     );
@@ -50,13 +61,9 @@ function App() {
 
   return (
     <div className="App">
-      <button
-        onClick={() => {
-          navigate("Trend");
-        }}
-      >
-        Continue
-      </button>
+      {!continueClicked && (
+        <button onClick={handleContinueClick}>Continue</button>
+      )}
       <button onClick={disconnectWallet}>Disconnect Wallet</button>
       <Routes>
         <Route path="Trend" element={<Crypto />} />

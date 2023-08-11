@@ -1,4 +1,66 @@
 .Home {
+  background-image: url("https://blog.jitter.video/content/images/2021/12/Jitter-Pink-perfect-loop-cubes.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  padding-top: 1px; /* Add a small padding to prevent margin collapse */
+}
+
+h2 {
+  position: relative;
+  top: 210px;
+}
+/* Heading Styles */
+.welcome-heading {
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 16px;
+  width: 425px;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  background-image: linear-gradient(
+    -225deg,
+    #731e9a80 0%,
+    #6f17db96 48%,
+    #4901ff77 100%
+  );
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Adjust margins, padding, colors, and other styles as needed */
+
+.btnn {
   position: relative;
   top: 220px;
+}
+
+.connect-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.connect-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btnn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btnn p {
+  color: #666;
+  font-size: 14px;
 }

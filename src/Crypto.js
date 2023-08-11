@@ -10,7 +10,8 @@ function Crypto() {
   useEffect(() => {
     axios
       .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en" //paste your API here
+        //you can get your API from "https://www.coingecko.com/en/api/documentation" this link
       )
       .then((res) => {
         setCoins(res.data);
