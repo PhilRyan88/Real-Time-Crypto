@@ -4,27 +4,34 @@ import "./App.css";
 //import Coin from "./Coin";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 function App() {
   const [isWalletInstalled, setIsWalletInstalled] = useState(false);
-  const navigate = useNavigate();
   const [account, setAccount] = useState(null);
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (window.ethereum) {
       setIsWalletInstalled(true);
     }
   }, []);
+
   async function connectWallet() {
-    window.ethereum
-      .request({
+    try {
+      const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
-      })
-      .then((accounts) => {
-        setAccount(accounts[0]);
-      })
-      .catch((error) => {
-        alert("Oops! Something went wrong bro :(");
       });
+
+      setAccount(accounts[0]);
+    } catch (error) {
+      alert("Oops! Something went wrong bro :(");
+    }
   }
+
+  function disconnectWallet() {
+    setAccount(null);
+  }
+
   if (account === null) {
     return (
       <div className="Home">
@@ -40,6 +47,7 @@ function App() {
       </div>
     );
   }
+
   return (
     <div className="App">
       <button
@@ -49,10 +57,12 @@ function App() {
       >
         Continue
       </button>
+      <button onClick={disconnectWallet}>Disconnect Wallet</button>
       <Routes>
         <Route path="Trend" element={<Crypto />} />
       </Routes>
     </div>
   );
 }
+
 export default App;
