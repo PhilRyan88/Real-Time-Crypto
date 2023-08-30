@@ -39,7 +39,7 @@ function Crypto() {
             className="coin-input"
             type="text"
             onChange={handleChange}
-            placeholder="Search"
+            placeholder="Search a crypto"
           />
         </form>
       </div>
